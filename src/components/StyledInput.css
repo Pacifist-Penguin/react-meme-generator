@@ -1,0 +1,12 @@
+.styled_input {
+  border: 1px solid #d5d4d8;
+  box-sizing: border-box;
+  border-radius: 0.25rem;
+  width: max(35%, 16rem);
+  margin: 0 15% 0 15%;
+  height: 4rem;
+  font-family: 'Karla', sans-serif;
+  margin-inline: 5rem;
+  color: black;
+  font-size: 3rem;
+}

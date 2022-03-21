@@ -1,0 +1,17 @@
+.get_meme_button {
+  background: linear-gradient(90.41deg, #711f8d 1.14%, #a818da 100%);
+  width: 75%;
+  height: 5rem;
+  border-radius: 1rem;
+  font-size: 3rem;
+}
+
+.centered_flex {
+  margin-top: 5rem;
+  display: flex;
+  justify-content: center;
+}
+
+* {
+  color: white;
+}
