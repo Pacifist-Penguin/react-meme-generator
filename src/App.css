@@ -1,17 +1,30 @@
 .get_meme_button {
-  background: linear-gradient(90.41deg, #711f8d 1.14%, #a818da 100%);
+  background: linear-gradient(90.41deg, #711f8d 0%, #a818da 100%);
   width: max(75%, 45rem);
   min-height: 5rem;
   border-radius: 1rem;
   font-size: 3rem;
+  color: white;
 }
 
 .centered_flex {
-  margin-top: 5rem;
+  margin-top: 3rem;
   display: flex;
   justify-content: center;
 }
 
-* {
-  color: white;
+.styled_input {
+  border: 1px solid #d5d4d8;
+  box-sizing: border-box;
+  border-radius: 0.25rem;
+  width: 45vw;
+  height: 4rem;
+  font-family: 'Karla', sans-serif;
+  margin-inline: 5vmin;
+  color: black;
+  font-size: 3rem;
+}
+
+.resulting_image {
+  height: 75vh;
 }
