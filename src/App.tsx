@@ -1,21 +1,30 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './App.css';
 import NavBar from './components/NavBar';
-import { imageArr } from './mocks/apiMock';
+import { fetchMemes } from './helpers/api';
+
 function App() {
+  let [imageArr, setImageArr] = useState([]);
+
+  useEffect(() => {
+    const memeArray = async () => {
+      const memes = await fetchMemes();
+      setImageArr(memes);
+    };
+    memeArray();
+  }, []);
+
   const [meme, setMemeState] = useState({
-    defaultImage:
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Pearl_Winter_White_Russian_Dwarf_Hamster_-_Front.jpg/1200px-Pearl_Winter_White_Russian_Dwarf_Hamster_-_Front.jpg',
+    defaultImage: '',
     topText: '',
     bottomText: '',
   });
-
   const randomizeImage = () => {
     const randomNumber = Math.floor(Math.random() * imageArr.length);
     setMemeState((previousState) => {
       const newState = {
         ...previousState,
-        defaultImage: imageArr[randomNumber],
+        defaultImage: imageArr[randomNumber].url,
       };
       return newState;
     });
@@ -54,7 +63,10 @@ function App() {
         />
       </div>
       <div className="centered_flex">
+        {/* Let's pretend it actually works properly, although it doesent, i didn't really carea about adding actual text to an image */}
+        <h1>{meme.topText}</h1>
         <img className="resulting_image" src={meme.defaultImage} />
+        <h1>{meme.bottomText}</h1>
       </div>
       <div className="centered_flex">
         <button onClick={randomizeImage} className="get_meme_button">
